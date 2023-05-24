@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CompanyCam / LeadPerfection</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <form>
+      <div class="form-page">
+        <div class="header">
+          <h1>Registration:</h1>
+        </div>
+        <div id="page1">
+          <ul class="input-holder">
+            <li>
+              <p>
+                <a href="https://google.com" target="_blank"
+                  >Make sure to link your Lead Perfection system before moving
+                  forward!</a
+                >
+              </p>
+            </li>
+            <li>
+              <input name="name" id="name-input" placeholder="Name" />
+            </li>
+            <li>
+              <input name="email" id="email-input" placeholder="Email" />
+            </li>
+            <li>
+              <input name="company" id="company-input" placeholder="Company" />
+            </li>
+          </ul>
+        </div>
+        <div id="page2" class="hidden">
+          <ul class="input-holder">
+            <li>
+              <input
+                name="cc-token"
+                id="cc-token-input"
+                placeholder="Company Cam Token"
+              />
+              <p>
+                <a
+                  href="https://app.companycam.com/access_tokens"
+                  target="_blank"
+                  >Don't have a token?</a
+                >
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div id="page3" class="hidden">
+          <ul class="input-holder">
+            <li>
+              <label
+                >How should we link Company Cam Projects to LeadPerfection? (We
+                suggest Customer)</label
+              >
+              <select name="link">
+                <option name="cst" selected>Customer</option>
+                <option name="job">
+                  Job (Requires 'Job Created' or 'Job Status' Trigger)
+                </option>
+              </select>
+            </li>
+            <li>
+              <label
+                >When should we create the Company Cam Project? (We suggest
+                Appointment Issued)</label
+              >
+              <select name="trigger">
+                <option name="newCust">New Customer</option>
+                <option name="apptIssued" selected>Appointment Issued</option>
+                <option name="apptSold">Appointment Sold</option>
+                <option name="jobCreated">Job Created</option>
+                <option name="specificStatus">Job Status</option>
+              </select>
+            </li>
+            <li>
+              <label
+                >What status should trigger the Company Cam Project
+                Creation?</label
+              >
+              <select name="status">
+                <option name="new">New</option>
+                <option name="rtp">RTP</option>
+                <option name="started">Started</option>
+                <option name="complete">Completed</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="button">
+          <button type="button">Previous</button>
+          <button type="button">Next</button>
+        </div>
+      </div>
+    </form>
+    <script src="scripts/scripts.js" async defer></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<?php
+	require_once("/home/shared/functions.php");
+	require_once("/home/scripts/mail.php");
+/*
+	$mail = new eMail('customer');
+	$mail->subject('We Need Your Feedback!');
+	$mail->msgHTML("/var/www/html/angiesList/index.html",__DIR__);
+	$email_list = array();
+	$file = fopen('email_list.csv', 'r');
+	while (($line = fgetcsv($file)) !== FALSE) {
+		$email_list[] = trim($line[0]);
+	}
+	fclose($file);
+	foreach($email_list as $email){
+		$mail = new eMail('customer');
+		$mail->subject('We Need Your Feedback!');
+		$mail->msgHTML("/var/www/html/angiesList/index.html",__DIR__);
+		$mail->to($email);
+		$mail->send();
+	}
+*/
+	$token = "Ihv8bYo2tMFe7tzapVyTc4CJu1uUiChqBz1muead";
+	$message = "Hello,<br>
+We appreciate the opportunity to work with you and, if you are happy with our service, we invite you to leave a review for us on the Angi.com website.<br>
+<br>
+https://www.angi.com/write-review/468136?cid=PRL.E014.P026.20180302<br>
+<br>
+Thank you!<br>
+<br>
+Sincerely,<br>
+Your Integrity Team!
+";
+	$to = "
+	curlCall("http://intserver-tbaker/api-endpoint/chirp/sendChat.php?token=Ihv8bYo2tMFe7tzapVyTc4CJu1uUiChqBz1muead&message=$message&to=4193560822&bot=1&read=1");
+
+?>

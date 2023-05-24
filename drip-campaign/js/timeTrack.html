@@ -1,0 +1,41 @@
+
+<script src="js/TimeMe/timeme.min.js"></script>
+
+<script>
+onload();
+function onload(){
+var d = new Date();
+var n = d.getTime();
+document.cookie = "time=" + n;
+TimeMe.trackTimeOnElement('test');
+}
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+</script>
+
+
+<script type="text/javascript">
+	TimeMe.initialize({
+		currentPageName: "welcome-letter", // current page
+		idleTimeoutInSeconds: 5, // stop recording time due to inactivity
+	});
+</script>
+
+<script>
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState !== 'visible') {
+        var cookie = getCookie('time');
+        var time = TimeMe.getTimeOnCurrentPageInSeconds();
+        var prospect = location.search.substring(1);
+	var page = encodeURIComponent(location.pathname);
+        var params = "cookie=" + cookie + "&onPage=" + time + "&prospect=" + prospect + "&page=" + page;
+        navigator.sendBeacon("https://integrityprodserver.com/lpAjax.php?action=trackTimeOnPage&" + params);
+  }
+});
+</script>
+<script>
+
+</script>

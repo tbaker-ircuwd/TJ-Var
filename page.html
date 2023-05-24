@@ -1,0 +1,13 @@
+<html>
+<body>
+    <div id="root"></div>
+    <script>
+        var host = 'ws://192.168.2.60:12345/websockets.php';
+        var socket = new WebSocket(host);
+        socket.onmessage = function(e) {
+            document.getElementById('root').innerHTML = e.data;
+	    console.log(JSON.parse(e.data));
+        };
+    </script>
+</body>
+</html>
